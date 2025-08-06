@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HerVoice Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hero" onclick="openModal()">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Welcome to Her Voice</h1>
+      <h2>Amazing Women Inspire the World</h2>
+      <p>Celebrating strength, creativity, and empowerment across cultures and generations.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h2>Login / Sign Up</h2>
+      <button>Continue with Mobile Number / Email</button>
+
+      <form action="https://accounts.google.com/o/oauth2/v2/auth" method="get">
+        <input type="hidden" name="client_id" value="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <input type="hidden" name="redirect_uri" value="http://localhost:5500/welcome.html">
+        <input type="hidden" name="response_type" value="token">
+        <input type="hidden" name="scope" value="openid email profile">
+        <input type="submit" value="Continue with Google">
+      </form>
+
+      <form action="https://www.facebook.com/v19.0/dialog/oauth?hl=en" method="get">
+        <input type="hidden" name="client_id" value="YOUR_FACEBOOK_APP_ID">
+        <input type="hidden" name="redirect_uri" value="http://localhost:5500/welcome.html">
+        <input type="hidden" name="response_type" value="token">
+        <input type="hidden" name="scope" value="email,public_profile">
+        <input type="submit" value="Continue with Facebook">
+      </form>
+
+      <p>By continuing, you agree to our 
+        <a href="#">Terms of Service</a> and 
+        <a href="#">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+    window.onclick = function(event) {
+      let modal = document.getElementById("loginModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <style> {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.leocoffee.co.in/cdn/shop/articles/10818.jpg?v=1709543960');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(60%) blur(4px);
+  animation: zoom 20s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 600px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #FFD700;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  color: #FFB6C1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-content button,
+.modal-content input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-content button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-content input[value="Continue with Google"] {
+  background-color: #DB4437;
+  color: white;
+}
+
+.modal-content input[value="Continue with Facebook"] {
+  background-color: #3b5998;
+  color: white;
+}
+
+.modal-content p {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.modal-content a {
+  color: #555;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* Basic Sample Styling */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.sample-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+}
+
+.sample-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.sample-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sample-button:hover {
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+}

@@ -1,16 +1,101 @@
-
-.Body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #ff7f7f, #ffdab9);
-  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body, html {
+  height: 100%;
+}
 
-  /* Flexbox for center alignment */
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.leocoffee.co.in/cdn/shop/articles/10818.jpg?v=1709543960');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(60%) blur(4px);
+  animation: zoom 20s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 600px;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #FFD700;
+}
+.hero h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  color: #FFB6C1;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Login Form */
+.Loginform {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: clamp(280px, 90%, 500px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
 }
 
 .Heading {
@@ -21,51 +106,15 @@
   margin-bottom: 30px;
 }
 
-.InputField {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.Loginform {
-    margin: 50px auto;
-    background-color: #fff;
-    width: clamp(280px, 90%, 500px);   /* auto-scale between small and large screens */
-    padding: 40px 30px;
-    border-radius: 25px;                /* smooth rounded corners */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* softer modern shadow */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.ProjectInfo {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-/* ButtonGroup: arranges buttons vertically with spacing */
 .ButtonGroup {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  margin-top: 30px;
   align-items: stretch;
 }
 
-/* Targeting all classes that end with "Button" */
+/* Buttons */
 [class$="Button"] {
   display: block;
   text-align: center;
@@ -73,80 +122,51 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Specific color themes */
-/* Sign Up Button - Green Gradient */
 .SignUpButton {
-  background: linear-gradient(to right, #43e97b, #38f9d7); /* Green Gradient */
+  background: linear-gradient(to right, #43e97b, #38f9d7);
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 .SignUpButton:hover {
-  background: linear-gradient(to right, #38f9d7, #43e97b); /* Reverse gradient on hover */
+  background: linear-gradient(to right, #38f9d7, #43e97b);
 }
 
-
-/* Google Button - Orange Gradient */
 .GoogleButton {
-  background: linear-gradient(to right, #f6d365, #fda085); /* Soft Google-like orange */
+  background: linear-gradient(to right, #f6d365, #fda085);
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 .GoogleButton:hover {
-  background: linear-gradient(to right, #fda085, #f6d365); /* Reverse gradient on hover */
+  background: linear-gradient(to right, #fda085, #f6d365);
 }
 
-
-/* Facebook Button - Blue Gradient */
 .FacebookButton {
-  background: linear-gradient(to right, #4c66a4, #3b5998); /* Facebook Blue Gradient */
+  background: linear-gradient(to right, #4c66a4, #3b5998);
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.FacebookButton:hover {
+  background: linear-gradient(to right, #3b5998, #4c66a4);
 }
 
-.FacebookButton:hover {
-  background: linear-gradient(to right, #3b5998, #4c66a4); /* Reverse gradient on hover */
+.LoginLink, .Terms {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
 }
+
+.LoginLink a, .Terms a {
+  color: #555;
+  text-decoration: underline;
+}
+
+/* Footer */
 .Footer {
   text-align: center;
   padding: 15px;
@@ -156,4 +176,86 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Signup Form Section */
+.SignupForm {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.SignupForm input[type="text"],
+.SignupForm input[type="password"],
+.SignupForm input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Gender selection block inside Signup Form */
+.SignupForm label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.SignupForm input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Confirm button */
+.SignupForm input[type="submit"] {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.SignupForm input[type="submit"]:hover {
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+}
+
+/* Second-layer login popup */
+.login-popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1001; /* higher than modal */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-content input,
+.popup-content button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.popup-content button {
+  background: #4a00e0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #8e2de2;
 }
