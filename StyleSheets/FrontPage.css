@@ -1,0 +1,159 @@
+
+.Body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff7f7f, #ffdab9);
+  min-height: 100vh;
+
+  /* Flexbox for center alignment */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  flex-direction: column;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.InputField {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.Loginform {
+    margin: 50px auto;
+    background-color: #fff;
+    width: clamp(280px, 90%, 500px);   /* auto-scale between small and large screens */
+    padding: 40px 30px;
+    border-radius: 25px;                /* smooth rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* softer modern shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.ProjectInfo {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ButtonGroup: arranges buttons vertically with spacing */
+.ButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-top: 30px;
+  align-items: stretch;
+}
+
+/* Targeting all classes that end with "Button" */
+[class$="Button"] {
+  display: block;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Specific color themes */
+/* Sign Up Button - Green Gradient */
+.SignUpButton {
+  background: linear-gradient(to right, #43e97b, #38f9d7); /* Green Gradient */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.SignUpButton:hover {
+  background: linear-gradient(to right, #38f9d7, #43e97b); /* Reverse gradient on hover */
+}
+
+
+/* Google Button - Orange Gradient */
+.GoogleButton {
+  background: linear-gradient(to right, #f6d365, #fda085); /* Soft Google-like orange */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.GoogleButton:hover {
+  background: linear-gradient(to right, #fda085, #f6d365); /* Reverse gradient on hover */
+}
+
+
+/* Facebook Button - Blue Gradient */
+.FacebookButton {
+  background: linear-gradient(to right, #4c66a4, #3b5998); /* Facebook Blue Gradient */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.FacebookButton:hover {
+  background: linear-gradient(to right, #3b5998, #4c66a4); /* Reverse gradient on hover */
+}
+.Footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #eaeaea;
+  font-size: 14px;
+  color: #666;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
