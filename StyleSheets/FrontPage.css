@@ -1,15 +1,17 @@
-/* Reset */
+/* ------------------ RESET ------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+
 body, html {
   height: 100%;
 }
 
-/* Hero Section */
+
+/* ------------------ HERO SECTION ------------------ */
 .hero {
   position: relative;
   height: 100vh;
@@ -53,11 +55,13 @@ body, html {
   font-size: 3rem;
   color: #FFD700;
 }
+
 .hero h2 {
   font-size: 1.8rem;
   margin-top: 10px;
   color: #FFB6C1;
 }
+
 .hero p {
   font-size: 1.2rem;
   margin-top: 15px;
@@ -68,11 +72,13 @@ body, html {
   100% { transform: scale(1.1); }
 }
 
-/* Modal */
+
+/* ------------------ MODAL ------------------ */
 .modal {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   display: none;
   align-items: center;
@@ -80,7 +86,8 @@ body, html {
   z-index: 10;
 }
 
-/* Login Form */
+
+/* ------------------ LOGIN FORM CONTAINER ------------------ */
 .Loginform {
   background-color: #fff;
   padding: 40px 30px;
@@ -94,8 +101,8 @@ body, html {
 }
 
 @keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.95);}
-  to {opacity: 1; transform: scale(1);}
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 .Heading {
@@ -106,6 +113,8 @@ body, html {
   margin-bottom: 30px;
 }
 
+
+/* ------------------ BUTTON GROUP ------------------ */
 .ButtonGroup {
   display: flex;
   flex-direction: column;
@@ -114,7 +123,8 @@ body, html {
   align-items: stretch;
 }
 
-/* Buttons */
+
+/* ------------------ BUTTON STYLES ------------------ */
 [class$="Button"] {
   display: block;
   text-align: center;
@@ -131,30 +141,28 @@ body, html {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Sign Up Button */
 .SignUpButton {
   background: linear-gradient(to right, #43e97b, #38f9d7);
   color: white;
 }
+
 .SignUpButton:hover {
   background: linear-gradient(to right, #38f9d7, #43e97b);
 }
 
-.GoogleButton {
-  background: linear-gradient(to right, #f6d365, #fda085);
+/* Login Button */
+.LoginButton {
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee); /* Light pink to sky blue */
   color: white;
 }
-.GoogleButton:hover {
-  background: linear-gradient(to right, #fda085, #f6d365);
+
+.LoginButton:hover {
+  background: linear-gradient(to right, #a6c1ee, #fbc2eb); /* Reverse gradient */
 }
 
-.FacebookButton {
-  background: linear-gradient(to right, #4c66a4, #3b5998);
-  color: white;
-}
-.FacebookButton:hover {
-  background: linear-gradient(to right, #3b5998, #4c66a4);
-}
 
+/* ------------------ TEXT LINKS ------------------ */
 .LoginLink, .Terms {
   text-align: center;
   font-size: 14px;
@@ -166,7 +174,26 @@ body, html {
   text-decoration: underline;
 }
 
-/* Footer */
+
+/* ------------------ SIGNUP FORM ------------------ */
+.RegistrationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.InputField {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+
+/* ------------------ FOOTER ------------------ */
 .Footer {
   text-align: center;
   padding: 15px;
@@ -176,46 +203,4 @@ body, html {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-/* Signup Form Section */
-.SignupForm {
-  display: none;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.SignupForm input[type="text"],
-.SignupForm input[type="password"],
-.SignupForm input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-/* Gender selection block inside Signup Form */
-.SignupForm label {
-  font-size: 14px;
-  margin-right: 10px;
-}
-
-.SignupForm input[type="radio"] {
-  margin-right: 5px;
-}
-
-/* Confirm button */
-.SignupForm input[type="submit"] {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.SignupForm input[type="submit"]:hover {
-  background: linear-gradient(to right, #4a00e0, #8e2de2);
 }

@@ -1,36 +1,30 @@
-    function openModal() {
-      document.getElementById("loginModal").style.display = "flex";
-    }
-
-    window.onclick = function(event) {
-      let modal = document.getElementById("loginModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    // Open login modal
+// === Show Login Modal ===
+// This function displays the login modal and hides the signup modal if open.
 function openModal() {
   document.getElementById("loginModal").style.display = "flex";
   document.getElementById("signupModal").style.display = "none";
 }
 
-// Open signup modal
+// === Show Signup Modal ===
+// This function displays the signup modal and hides the login modal if open.
 function openSignup() {
   document.getElementById("signupModal").style.display = "flex";
   document.getElementById("loginModal").style.display = "none";
 }
 
-// Back to login modal
+// === Switch to Login Modal ===
+// Called from the signup form to go back to login form.
 function switchToLogin() {
   document.getElementById("signupModal").style.display = "none";
   document.getElementById("loginModal").style.display = "flex";
 }
 
-// Close if clicked outside modal
+// === Close Modal on Outside Click ===
+// This closes either modal if user clicks outside the modal content area.
 window.onclick = function (event) {
   const loginModal = document.getElementById("loginModal");
   const signupModal = document.getElementById("signupModal");
+
   if (event.target === loginModal) loginModal.style.display = "none";
   if (event.target === signupModal) signupModal.style.display = "none";
 };

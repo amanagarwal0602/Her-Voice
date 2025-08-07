@@ -4,12 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HerVoice - Welcome</title>
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="StyleSheets/FrontPage.css">
-<script src="Scripts/FrontPage.js"></script>
+
+  <!-- External JS -->
+  <script src="Scripts/FrontPage.js"></script>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Landing page) -->
   <div class="hero" onclick="openModal()">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -19,64 +23,63 @@
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Login Modal (Opens on Hero click) -->
   <div class="modal" id="loginModal">
     <div class="Loginform">
       <h1 class="Heading">Connect with the digital network for women.</h1>
 
+      <!-- Sign Up Button Group -->
       <div class="ButtonGroup">
-    <a href="#" class="SignUpButton" onclick="openSignup()">
+        <a href="#" class="SignUpButton" onclick="openSignup()">
           <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" style="vertical-align: middle; margin-right: 8px;" />
           Sign Up with Mobile No./Email
         </a>
-        <a href="#" class="GoogleButton">
-          <img src="https://img.icons8.com/color/20/000000/google-logo.png" style="vertical-align: middle; margin-right: 8px;" />
-          Continue with Google
-        </a>
-        <a href="#" class="FacebookButton">
-          <img src="https://img.icons8.com/fluency/20/ffffff/facebook-new.png" style="vertical-align: middle; margin-right: 8px;" />
-          Continue with Facebook
-        </a>
       </div>
 
+      <!-- Login Button (styled as button) -->
       <div class="LoginLink">
-        <p>Already have an account? <a href="#">Login</a></p>
+        <p>Already have an account?</p>
+        <button class="LoginButton">Login</button>
       </div>
 
+      <!-- Terms & Policy -->
       <div class="Terms">
         <p>By continuing, you agree to our<br>
-        <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+          <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- Signup Modal -->
-<div class="modal" id="signupModal">
-  <div class="Loginform">
-    <h1 class="Heading">Create your HerVoice account</h1>
+  <!-- Signup Modal (Opens after clicking Sign Up) -->
+  <div class="modal" id="signupModal">
+    <div class="Loginform">
+      <h1 class="Heading">Create your HerVoice account</h1>
 
-    <form class="RegistrationForm">
-      <input type="text" placeholder="Full Name" class="InputField" required />
-      <input type="email" placeholder="Email Address" class="InputField" required />
-      <input type="tel" placeholder="Mobile Number" class="InputField" required />
-      <input type="password" placeholder="Create Password" class="InputField" required />
+      <!-- Signup Form -->
+      <form class="RegistrationForm">
+        <input type="text" placeholder="Full Name" class="InputField" required />
+        <input type="email" placeholder="Email Address" class="InputField" required />
+        <input type="tel" placeholder="Mobile Number" class="InputField" required />
+        <input type="password" placeholder="Create Password" class="InputField" required />
 
-      <button type="submit" class="SignUpButton">Register</button>
-    </form>
+        <button type="submit" class="SignUpButton">Register</button>
+      </form>
 
-    <div class="LoginLink">
-      <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+      <!-- Switch to Login Button -->
+      <div class="LoginLink">
+        <a href="#" class="LoginButton" onclick="switchToLogin()">
+          <img src="https://img.icons8.com/ios-glyphs/20/ffffff/lock.png" style="vertical-align: middle; margin-right: 8px;" />
+          Login to Your Account
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- Footer -->
   <footer class="Footer">
     © 2025 HerVoice. All rights reserved.
   </footer>
-
-
-
 
 </body>
 </html>
