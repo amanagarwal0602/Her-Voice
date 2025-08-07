@@ -89,11 +89,11 @@ body, html {
 
 /* ------------------ LOGIN FORM CONTAINER ------------------ */
 .Loginform {
-  background-color: #fff;
+  background: linear-gradient(to bottom right, #fbe0ff, #e3d2ff);
   padding: 40px 30px;
   border-radius: 25px;
-  width: clamp(280px, 90%, 500px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: clamp(320px, 90%, 480px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,8 +109,8 @@ body, html {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
+  color: #4b007d;
+  margin-bottom: 25px;
 }
 
 
@@ -141,24 +141,22 @@ body, html {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Sign Up Button */
 .SignUpButton {
-  background: linear-gradient(to right, #43e97b, #38f9d7);
+  background: linear-gradient(to right, #f78aff, #8b6eff);
   color: white;
 }
 
 .SignUpButton:hover {
-  background: linear-gradient(to right, #38f9d7, #43e97b);
+  background: linear-gradient(to right, #8b6eff, #f78aff);
 }
 
-/* Login Button */
 .LoginButton {
-  background: linear-gradient(to right, #fbc2eb, #a6c1ee); /* Light pink to sky blue */
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
   color: white;
 }
 
 .LoginButton:hover {
-  background: linear-gradient(to right, #a6c1ee, #fbc2eb); /* Reverse gradient */
+  background: linear-gradient(to right, #a6c1ee, #fbc2eb);
 }
 
 
@@ -175,21 +173,61 @@ body, html {
 }
 
 
-/* ------------------ SIGNUP FORM ------------------ */
-.RegistrationForm {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+/* ------------------ SIGNUP FORM CUSTOM ------------------ */
+.SignupTable {
+  width: 100%;
 }
 
-.InputField {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
+.SignupInput {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d3b2ff;
+  background-color: #fef4ff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.SignupInput:focus {
+  outline: none;
+  border-color: #9b5de5;
+  box-shadow: 0 0 6px rgba(155, 93, 229, 0.6);
+}
+
+.GenderLabel {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5a007d;
+  display: block;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+.GenderRadio {
+  margin-right: 6px;
+  cursor: pointer;
+  accent-color: #c063ff;
+}
+
+.ConfirmButton {
+  background: linear-gradient(to right, #d383ff, #ff85d1);
+  color: white;
+  padding: 12px 35px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  margin-top: 15px;
+}
+
+.ConfirmButton:hover {
+  background: linear-gradient(to right, #ff85d1, #d383ff);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 

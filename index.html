@@ -51,27 +51,74 @@
     </div>
   </div>
 
-  <!-- Signup Modal (Opens after clicking Sign Up) -->
-  <div class="modal" id="signupModal">
-    <div class="Loginform">
-      <h1 class="Heading">Create your HerVoice account</h1>
+<!-- Signup Modal (Updated Form with Class Names) -->
+<div class="modal" id="signupModal">
+  <div class="Loginform">
+    <center><h1 class="Heading">Create your HerVoice account</h1></center>
 
-      <!-- Signup Form -->
-      <form class="RegistrationForm">
-        <input type="text" placeholder="Full Name" class="InputField" required />
-        <input type="email" placeholder="Email Address" class="InputField" required />
-        <input type="tel" placeholder="Mobile Number" class="InputField" required />
-        <input type="password" placeholder="Create Password" class="InputField" required />
+    <form class="RegistrationForm" onsubmit="return validatePassword()">
+  <table align="center" cellpadding="15" cellspacing="5" class="SignupTable">
+            <tr>
+          <td>
+            <center>
+              <input placeholder="Your Full Name" type="text" class="SignupInput" required><br>
+            </center>
+          </td>
+        </tr>
+    <tr>
+      <td>
+        <center>
+          <input id="mobile" class="SignupInput" placeholder="Enter Mobile No." type="text" pattern="\d{10}" title="Please enter a 10-digit mobile number" required><br>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="password" id="password" name="password" placeholder="Enter Password" class="SignupInput" required>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <center>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Password again" class="SignupInput" required><br>
+        </center>
+      </td>
+    </tr>
 
-        <button type="submit" class="SignUpButton">Register</button>
-      </form>
+        <tr>
+          <td>
+            <center>
+              <input placeholder="Username" type="text" class="SignupInput" required><br>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <center><label class="GenderLabel">Enter your gender</label><br></center>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <center><input type="radio" name="gender" value="female" class="GenderRadio" required> <label for="female">Female</label></center>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <center><input type="submit" value="Confirm" class="ConfirmButton"></center>
+          </td>
+        </tr>
+      </table>
+    </form>
 
-      <!-- Switch to Login Button -->
+    <div class="LoginLink">
+      <center><p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p></center>
+    </div>
+  </div>
+</div>
+
+
       <div class="LoginLink">
-        <a href="#" class="LoginButton" onclick="switchToLogin()">
-          <img src="https://img.icons8.com/ios-glyphs/20/ffffff/lock.png" style="vertical-align: middle; margin-right: 8px;" />
-          Login to Your Account
-        </a>
+        <center><p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p></center>
       </div>
     </div>
   </div>

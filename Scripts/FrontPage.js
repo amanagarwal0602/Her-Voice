@@ -28,3 +28,16 @@ window.onclick = function (event) {
   if (event.target === loginModal) loginModal.style.display = "none";
   if (event.target === signupModal) signupModal.style.display = "none";
 };
+
+
+function validatePassword() {
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirmPassword").value;
+
+  if (password !== confirm) {
+    alert("Passwords do not match. Please try again.");
+    return false;
+  }
+
+  return true; // allow form submission
+}
