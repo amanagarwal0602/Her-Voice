@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HerVoice - Welcome</title>
   <link rel="stylesheet" href="StyleSheets/FrontPage.css">
-  <script src="Scripts/FrontPage.js"></script>
-  
+<script src="Scripts/FrontPage.js"></script>
 </head>
 <body>
 
@@ -26,7 +25,7 @@
       <h1 class="Heading">Connect with the digital network for women.</h1>
 
       <div class="ButtonGroup">
-        <a href="#" class="SignUpButton" onclick="showSignupForm(event)">
+    <a href="#" class="SignUpButton" onclick="openSignup()">
           <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" style="vertical-align: middle; margin-right: 8px;" />
           Sign Up with Mobile No./Email
         </a>
@@ -40,31 +39,6 @@
         </a>
       </div>
 
-      <!-- New Login Popup (shown after signup) -->
-<div class="login-popup" id="loginPopup">
-  <div class="popup-content">
-    <h2>Login</h2>
-    <input type="text" placeholder="Mobile No. or Email" required>
-    <input type="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-    <button onclick="closeLoginPopup()">Close</button>
-  </div>
-</div>
-
-
-   <!-- Updated Signup Form (inside loginModal) -->
-<form class="SignupForm" id="signupForm">
-  <input type="text" placeholder="Enter Mobile No." required>
-  <input type="password" placeholder="Enter Password" required>
-  <input type="password" placeholder="Enter Password again" required>
-  <input type="text" placeholder="Your Full Name" required>
-  <input type="text" placeholder="Username" required>
-  <input type="text" placeholder="Gender" required>
-
-  <input type="submit" value="Confirm" onclick="showLoginPopup(event)">
-</form>
-
-
       <div class="LoginLink">
         <p>Already have an account? <a href="#">Login</a></p>
       </div>
@@ -76,29 +50,33 @@
     </div>
   </div>
 
+  <!-- Signup Modal -->
+<div class="modal" id="signupModal">
+  <div class="Loginform">
+    <h1 class="Heading">Create your HerVoice account</h1>
+
+    <form class="RegistrationForm">
+      <input type="text" placeholder="Full Name" class="InputField" required />
+      <input type="email" placeholder="Email Address" class="InputField" required />
+      <input type="tel" placeholder="Mobile Number" class="InputField" required />
+      <input type="password" placeholder="Create Password" class="InputField" required />
+
+      <button type="submit" class="SignUpButton">Register</button>
+    </form>
+
+    <div class="LoginLink">
+      <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+    </div>
+  </div>
+</div>
+
   <!-- Footer -->
   <footer class="Footer">
     © 2025 HerVoice. All rights reserved.
   </footer>
 
-  <!-- Script -->
-  <script>
-    function openModal() {
-      document.getElementById("loginModal").style.display = "flex";
-    }
 
-    function showSignupForm(event) {
-      event.preventDefault(); // prevent link reload
-      document.getElementById("signupForm").style.display = "flex";
-    }
 
-    window.onclick = function(event) {
-      let modal = document.getElementById("loginModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-        document.getElementById("signupForm").style.display = "none";
-      }
-    };
-  </script>
+
 </body>
 </html>
